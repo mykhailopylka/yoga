@@ -9,6 +9,19 @@ a:hover {
   color: inherit;
 }
 
+i {
+  color: #fd8329;
+  border: 1px solid #fd8329;
+  border-radius: 50%;
+  text-align: center;
+  width: 3rem;
+  padding: 0.5rem;
+}
+
+ul li {
+  list-style-type: none;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -78,7 +91,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
-  body.lock{
+  body.lock {
     overflow: hidden;
   }
   .header__body {
@@ -133,7 +146,7 @@ a:hover {
   }
 
   .header__burger span {
-    top: 9px;    
+    top: 9px;
   }
 
   .header__burger::before {
@@ -168,8 +181,91 @@ a:hover {
     margin: 0 0 20px 0;
   }
 }
-
-
+/* contacts=========================================== */
+/* grid */
+.contacts-grid {
+  display: grid;
+  margin-top: 150px;
+  /* ширина трьох колонок */
+  /* grid-template-columns: 1fr 1fr 250px; */
+  /* grid-template-columns: 100px repeat(2, 1fr 2fr); */
+  /* grid-template-columns: minmax(50px, 200px) 1fr 1fr; */
+  /* auto-fill дає можливість переносу колонок при зміні розширення при мінімумі ширини в 320px */
+  /* auto-fill/auto-fit */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* висота трьох рядків */
+  grid-template-rows: auto;
+  /* висота рядків по замовчуванню*/
+  grid-auto-rows: minmax(50px, auto);
+  /* grid-auto-rows: 70px; */
+  /* відстань між колонками */
+  /* grid-column-gap: 20px; */
+  /* відстань між рядками */
+  /* grid-row-gap: 10px; */
+  /* відстань між рядками та колонками */
+  grid-column-gap: auto;
+  grid-row-gap: 20px;
+  /* переводить в column/row */
+  /* grid-auto-flow: column; */
+  /* ============== */
+  /* розміщення елементів: start/end/center/stretch*/
+  /* по осі Y */
+  align-items: stretch;
+  /* по осі X */
+  justify-items: stretch;
+  /* border: 1px solid #000; */
+  max-width: 66.666666%;
+  width: 100%;
+}
+/* управління початком і закінчення елемента фракції */
+.contacts-grid div:nth-child(1) {
+  /* grid-column-start: 2;
+  grid-column-end: 4; */
+  /* скорочено: */
+  /* розвернення першої фракнії на всю ширину блока */
+  grid-column: 1;
+  grid-row: 1;
+}
+/* grid-row задає місце фракції в строці */
+.contacts-grid div:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+  /* управління елементом */
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+.contacts-grid div:nth-child(3) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row: 2;
+  justify-self: center;
+  align-self: stretch;
+}
+.contacts-grid div:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+.contacts-grid div:nth-child(5) {
+  grid-column: 2;
+  grid-row: 3;
+}
+.contacts-grid div:nth-child(6) {
+  grid-column: 3;
+  grid-row: 3;
+}
+.contacts-grid__items ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 0 0;
+}
+.contacts-grid__items li:hover {
+  box-shadow: 5px 5px 5px #fd8329;
+  border-radius: 50%;
+}
+.contacts-grid__items .fa {
+  font-size: 1.8rem;
+}
+/* /contacts=========================================== */
 
 /* @media (max-width: 570px) {
   .menu__btn {
