@@ -210,9 +210,9 @@ ul li {
   /* ============== */
   /* розміщення елементів: start/end/center/stretch*/
   /* по осі Y */
-  align-items: stretch;
+  /* align-items: stretch; */
   /* по осі X */
-  justify-items: stretch;
+  /* justify-items: stretch; */
   /* border: 1px solid #000; */
   max-width: 66.666666%;
   width: 100%;
